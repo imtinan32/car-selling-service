@@ -1,9 +1,8 @@
 /*eslint-disable*/
 
-
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
@@ -13,8 +12,8 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('/login', data);
-      if (response.data.message === 'Login successful') {
+      const response = await axios.post('http://localhost:3000/login', data);
+      if (response.status === 200 && response.data.message === 'Login successful') {
         console.log('Login successful!');
         navigate('/selling-item'); 
       } else {
@@ -27,6 +26,7 @@ const LoginForm = () => {
 
   return (
     <>
+    <div className="login-form-container">
       <h1>Login User Form</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">User Email</label>
@@ -51,10 +51,11 @@ const LoginForm = () => {
         />
         {errors.password && <p>{errors.password.message}</p>}
 
-        <button type="submit" disabled={errors.email || errors.password}>
+        <button type="submit" disabled={Object.keys(errors).length > 0}>
           Login
         </button>
       </form>
+      </div>
     </>
   );
 };

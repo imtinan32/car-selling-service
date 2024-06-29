@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
@@ -5,6 +7,10 @@ import SellingItem from './components/SellingItem';
 import './App.css';
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LoginForm />, 
+  },
   {
     path: "/login",
     element: <LoginForm />,
