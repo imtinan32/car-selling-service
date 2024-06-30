@@ -35,30 +35,31 @@ const SellingItem = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     console.log("imageupload")
 
-    const formData = new FormData();
-
-    for (const key in vehicleData) {
-      if (key !== 'images') {
-        formData.append(key, vehicleData[key]);
-      }
-    }
-
-    vehicleData.images.forEach((image) => {
-      formData.append('images', image);
-    });
-
+  console.log(vehicleData);
+        
     try {
-      const response = await axios.post('http://localhost:3000/vehicles', formData, {
+      console.log("try");
+      const response = await axios.post('http://localhost:3000/vehicles', vehicleData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
         withCredentials: true 
       });
-      console.log(response.data.message);
+      console.log(response);
     } catch (error) {
       console.error('Error submitting vehicle information:', error);
     }
+
+    setVehicleData({
+      model: '',
+      price: '',
+      phone: '',
+      city: '',
+      maxPictures: 1,
+      images: []
+    })
   };
 
   return (

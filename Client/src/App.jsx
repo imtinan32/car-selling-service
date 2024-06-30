@@ -3,7 +3,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-import SellingItem from './components/SellingItem';
+import SellingItem from './components/CarListing';
 import './App.css';
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <LoginForm />,
   },
   {
-    path: "/selling-item",
+    path: "/vehicles",
     element: <SellingItem />,
   },
 ]);

@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const vehicleSchema = new mongoose.Schema({
@@ -6,8 +7,8 @@ const vehicleSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   city: { type: String, required: true },
   maxPictures: { type: Number, required: true, min: 1, max: 10 },
-  pictures: { type: [String], default: [] }, 
-  userId: { type: mongoose.Schema.Types.ObjectId,ref:'User' ,required: true }, 
+  pictures: { type: [String], default: [] },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
 const Vehicle = mongoose.model('Vehicle', vehicleSchema);

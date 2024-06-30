@@ -12,10 +12,12 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/login', data);
+      const response = await axios.post('http://localhost:3000/login', data, {
+        withCredentials: true
+      },data);
       if (response.status === 200 && response.data.message === 'Login successful') {
         console.log('Login successful!');
-        navigate('/selling-item'); 
+        navigate('/vehicles'); 
       } else {
         console.error('Login failed:', response.data.message);
       }
