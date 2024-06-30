@@ -5,7 +5,6 @@ const cors = require('cors');
 const preData = require('./data/predata');
 const loginRouter = require('./routers/login.router');
 const vehicleRouter = require('./routers/vehicle.router');
-// const dbURI = 'mongodb+srv://imtinan:imtinan1234@cluster0.pmdmttr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/CarList';
 const dbURL = 'mongodb://127.0.0.1:27017/CarList'
 const app = express();
 const port = 3000;
@@ -26,7 +25,6 @@ app.use(session({
   }
 }));
 
-// Call preData to seed initial users
 preData();
 
 mongoose.connect(dbURL, {
