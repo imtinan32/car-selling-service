@@ -5,14 +5,17 @@ const cors = require('cors');
 const preData = require('./data/predata');
 const loginRouter = require('./routers/login.router');
 const vehicleRouter = require('./routers/vehicle.router');
-const dbURL = 'mongodb://127.0.0.1:27017/CarList'
+const dbURL = 'mongodb+srv://imtinan:imtinan1234@cluster0.pmdmttr.mongodb.net/CarList?appName=Cluster0&retryWrites=true&w=majority'
 const app = express();
 const port = 3000;
 
-app.use(cors({
-  origin: '*',
-  credentials: true
-}));
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 app.use(session({
   secret: 'your-secret-key',
