@@ -32,7 +32,8 @@ preData();
 
 mongoose.connect(dbURL, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000
 })
 .then(() => {
   console.log('Database Connected');
