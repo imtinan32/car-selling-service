@@ -46,5 +46,9 @@ mongoose.connect(dbURL, {
   process.exit(1);
 });
 
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
+
 app.use('/login', loginRouter);
 app.use('/vehicles', vehicleRouter);
