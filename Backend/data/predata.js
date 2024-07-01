@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const User = require('../models/login.model'); // Adjust the path as per your project structure
-// const dbURI = 'mongodb+srv://imtinan:imtinan1234@cluster0.pmdmttr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/CarList';
-const dbURL = 'mongodb://127.0.0.1:27017/CarList'
+const User = require('../models/login.model');
+const dbURL = 'mongodb+srv://imtinan:imtinan1234@cluster0.pmdmttr.mongodb.net/CarList?appName=Cluster0&retryWrites=true&w=majority'
 const preData = async () => {
   let connection;
   try {
