@@ -50,6 +50,6 @@ mongoose.connect(dbURL, {
 app.get("/", (req, res) => {
     res.json("Hello");
 })
-
+console.log('server connected ')
 app.use('/login', loginRouter);
 app.use('/vehicles', vehicleRouter);
