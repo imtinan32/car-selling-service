@@ -5,7 +5,7 @@ const cors = require('cors');
 const preData = require('./data/predata');
 const loginRouter = require('./routers/login.router');
 const vehicleRouter = require('./routers/vehicle.router');
-const dbURL = 'mongodb+srv://imtinan:imtinan1234@cluster0.pmdmttr.mongodb.net/CarList?appName=Cluster0&retryWrites=true&w=majority'
+const dbURL = 'mongodb+srv://imtinan:@cluster0.pmdmttr.mongodb.net/CarList?appName=Cluster0&retryWrites=true&w=majority'
 const app = express();
 const port = 3000;
 
